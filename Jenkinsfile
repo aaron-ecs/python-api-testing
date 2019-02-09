@@ -1,7 +1,9 @@
 node {
-    def app
-    stage('Build Docker Image') {
+    stage('Build') {
         checkout scm
-        app = docker.build("aaronmwilliams/apitesting")
+        sh "docker build . -t aaronmwilliams/python-api-testing"
+    }
+    stage('Test') {
+        sh "docker-compose up --exit-code-from tests"
     }
 }

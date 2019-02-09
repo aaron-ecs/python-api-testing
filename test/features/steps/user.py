@@ -5,7 +5,7 @@ import json
 from behave import given, when, then
 import requests
 
-_BASE_URL = "http://192.168.1.149:8080/api/users/"
+_BASE_URL = "http://api:8080/api/users/"
 USER_PAYLOAD = "{}"
 RESPONSE = {}
 
@@ -25,7 +25,6 @@ def get_unknown_user(self):
 @when("I create my details")
 def create_user(self):
     """ Posts user and saves response JSON """
-    print(self.USER_PAYLOAD + " LLLLLLLL")
     self.RESPONSE = get_user(_BASE_URL + str(post_user(self.USER_PAYLOAD)["id"]))
 
 

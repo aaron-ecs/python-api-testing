@@ -1,0 +1,11 @@
+version: '3'
+services:
+  tests:
+    image: aaronmwilliams/python-api-testing
+    depends_on:
+      - "api"
+    command: ["./wait-for-it.sh", "api:8080", "--timeout=90", "--strict", "--", "behave"]
+  api:
+    image: aaronmwilliams/user-exercises-rest
+    ports:
+      - 8080:8080
