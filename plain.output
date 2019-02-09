@@ -1,0 +1,26 @@
+Feature: User
+
+  Scenario Outline: Create User -- @1.1 
+    Given I am Aaron with postcode PE20 1LG ... passed in 0.000s
+    When I create my details ... passed in 0.213s
+    Then the response code is 200 ... passed in 0.000s
+
+  Scenario Outline: Create User -- @1.2 
+    Given I am James with postcode AA14DN ... passed in 0.000s
+    When I create my details ... passed in 0.050s
+    Then the response code is 200 ... passed in 0.000s
+
+  Scenario Outline: Create User -- @1.3 
+    Given I am Fred-WilliamsO'riley with postcode B R14R T ... passed in 0.000s
+    When I create my details ... passed in 0.035s
+    Then the response code is 200 ... passed in 0.000s
+
+  Scenario Outline: Create User -- @1.4 
+    Given I am A with postcode AAAAAAAA ... passed in 0.000s
+    When I create my details ... passed in 0.033s
+    Then the response code is 200 ... passed in 0.000s
+
+  Scenario: User Not Found
+    Given I attempt to view a user which does not exist ... passed in 0.014s
+    Then the response code is 404 ... passed in 0.000s
+

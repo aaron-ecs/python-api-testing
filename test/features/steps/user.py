@@ -5,7 +5,7 @@ import json
 from behave import given, when, then
 import requests
 
-_BASE_URL = "http://localhost:8080/api/users/"
+_BASE_URL = "http://192.168.1.149:8080/api/users/"
 USER_PAYLOAD = "{}"
 RESPONSE = {}
 
