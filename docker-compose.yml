@@ -4,7 +4,7 @@ services:
     image: aaronmwilliams/python-api-testing
     depends_on:
       - "api"
-    command: ["./wait-for-it.sh", "api:8080", "--timeout=90", "--strict", "--", "behave"]
+    command: ["./wait-for-api.sh"]
   api:
     image: aaronmwilliams/user-exercises-rest
     ports:
